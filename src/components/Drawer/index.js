@@ -62,11 +62,14 @@ export default function Drawers({ open, handleDrawerClose }) {
                         {theme.direction === 'ltr' ? <ChevronLeftIcon className={classes.icon}/> : <ChevronRightIcon className={classes.icon}/>}
                     </IconButton>
                 </div>
+                
                 <Divider />
                 {/**NavBar */}
                 <NavBar />
                 {/** END - NavBar */}
+                
             </Drawer>
+           
         </>
     );
 }

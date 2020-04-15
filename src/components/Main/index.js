@@ -2,6 +2,8 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+import Table from './Table';
+import Menu from './Menu';
 
 const drawerWidth = 240;
 
@@ -47,7 +49,8 @@ export default function Main({ open }) {
       >
         <div className={classes.drawerHeader} />
         {/**Conteudo da pagina */}
-        Gabriel Santos de Lima Barreto
+        <Menu />
+        <Table />
       </main>
     
     

@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: 'none',
   },
+
 }));
 
 
@@ -68,6 +69,7 @@ export default function Header({ open, handleDrawerOpen }) {
           <Typography variant="h6" noWrap>
            CRUD-SIMPLE
           </Typography>
+          
         </Toolbar>
       </AppBar>
 

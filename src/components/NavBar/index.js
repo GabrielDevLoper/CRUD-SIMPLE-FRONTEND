@@ -38,6 +38,15 @@ export default function NavBar() {
                     </ColorButton>
                 ))}
             </List>
+            <Divider />
+            <List>
+                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    <ColorButton button key={text}>
+                        <ListItemIcon style={{color: 'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ColorButton>
+                ))}
+            </List>
         </>
     );
 }
