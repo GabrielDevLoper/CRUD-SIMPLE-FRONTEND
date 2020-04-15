@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { green, purple } from '@material-ui/core/colors';
 import NavBar from '../NavBar';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';

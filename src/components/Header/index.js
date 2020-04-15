@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { green, purple } from '@material-ui/core/colors';
 
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -9,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -39,12 +39,17 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: 'none',
   },
+  links: {
+    textDecoration: 'none',
+    color: 'white' 
+
+}
 
 }));
 
 
 
-export default function Header({ open, handleDrawerOpen }) {
+export default function Header({ open, handleDrawerOpen, title }) {
   const classes = useStyles();
 
   return (
@@ -66,9 +71,11 @@ export default function Header({ open, handleDrawerOpen }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-           CRUD-SIMPLE
-          </Typography>
+          <Link className={classes.links}to="/main">
+            <Typography variant="h6" noWrap>
+              {title}
+            </Typography>
+          </Link>
           
         </Toolbar>
       </AppBar>
