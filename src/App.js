@@ -1,10 +1,11 @@
 import React from 'react';
-import Button from './components/Button/Button';
-import Dashboard from './components/Dashboard';
+
+import Routes from './routes';
+
 
 function App() {
   return (
-    <Dashboard />
+    <Routes />
   );
 }
 

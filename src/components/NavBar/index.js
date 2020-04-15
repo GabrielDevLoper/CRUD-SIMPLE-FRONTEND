@@ -6,14 +6,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Divider from '@material-ui/core/Divider';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { green, purple } from '@material-ui/core/colors';
+import { withStyles } from '@material-ui/core/styles';
 
 
 const ColorButton = withStyles((theme) => ({
     root: {
       '&:hover': {
-        backgroundColor: purple[500],
+        backgroundColor: '#7159c1',
       },
       
     },

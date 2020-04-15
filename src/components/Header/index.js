@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
     '&:hover':{
-      backgroundColor: purple[500],
+      backgroundColor: '#7159c1',
       
     }
   },

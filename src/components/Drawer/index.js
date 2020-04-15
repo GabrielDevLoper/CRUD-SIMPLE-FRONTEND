@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: 'white',
         '&:hover':{
-            backgroundColor: purple[500],
+            backgroundColor: '#7159c1',
             
         }
     }
