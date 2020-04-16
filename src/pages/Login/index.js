@@ -140,7 +140,7 @@ export default function SignIn() {
                         </Grid>
                         <Grid item>
                             <Link style={{textDecoration: 'none', color: 'blue'}}to="/register">
-                                "Don't have an account? Sign Up"
+                                "Não tem uma conta? Crie uma agora"
                             </Link>
                         </Grid>
                     </Grid>

@@ -1,10 +1,17 @@
 import React from 'react';
 
 import Routes from './routes';
+import Favicon from 'react-favicon';
+import Logo from './assets/software.png';
+
 
 function App() {
   return (
-    <Routes />
+    <>
+    
+      <Favicon url={Logo}/>
+      <Routes />
+    </>
   );
 }
 
