@@ -11,9 +11,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Form } from '@unform/web';
 import Input from '../../components/Input';
+import api from '../../services/api';
+import swal from 'sweetalert';
 
 function Copyright() {
     return (
@@ -54,12 +56,30 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
     const classes = useStyles();
     const formRef = useRef(null);
+    const history = useHistory();
 
 
-    function handleSubmit(data, {reset}) {
-        console.log(data);
+    async function handleLogin(data, {reset}) {
+        const { email } = data;
+       
         // { email: 'test@example.com', password: '123456' }
+        const response = await api.post('/sessions', data);
 
+       const { messageSenha, messageEmail, token} = response.data;
+
+       if(messageSenha) {
+        swal("Error", `${messageSenha}`, "error");
+        }
+
+       if(messageEmail) {
+        swal("Error", `${messageEmail}`, "error");
+        }
+
+       if(token) {
+        swal("Logado com Sucesso", `${email} Seja Bem vindo`, "success");
+        history.push('/main');
+        }
+        
         reset();
       }
 
@@ -71,16 +91,16 @@ export default function SignIn() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Acessar Sistema
                 </Typography>
-                <Form ref={formRef} onSubmit={handleSubmit} className={classes.form} >
+                <Form ref={formRef} onSubmit={handleLogin} className={classes.form} >
                     <Input
                         variant="outlined"
                         margin="normal"
                         required
                         fullWidth
                         id="email"
-                        label="Email Address"
+                        label="Email"
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -92,16 +112,16 @@ export default function SignIn() {
                         required
                         fullWidth
                         name="password"
-                        label="Password"
+                        label="Senha"
                         type="password"
                         id="password"
                         autoComplete="current-password"
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
+                        label="Me Lembrar"
                     />
-                    <Link to="/main">
+                    
                         <Button
                             type="submit"
                             fullWidth
@@ -109,25 +129,25 @@ export default function SignIn() {
                             color="primary"
                             className={classes.submit}
                         >
-                            Sign In
+                            Entrar
                         </Button>
-                    </Link>
+                   
                     <Grid container>
                         <Grid item xs>
                             <Links href="#" variant="body2">
-                                Forgot password?
+                              
                             </Links>
                         </Grid>
                         <Grid item>
-                            <Link style={{textDecoration: 'none',}} to="/register">
-                                {"Don't have an account? Sign Up"}
+                            <Link style={{textDecoration: 'none', color: 'blue'}}to="/register">
+                                "Don't have an account? Sign Up"
                             </Link>
                         </Grid>
                     </Grid>
                 </Form>
             </div>
             <Box mt={8}>
-                <Copyright />
+              
             </Box>
         </Container>
     );

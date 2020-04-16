@@ -10,8 +10,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
+import Logo from '../../assets/mountains.svg';
 const drawerWidth = 240;
-
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    background: '#19181F',
+    
+    backgroundColor: '#19181F'
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -72,7 +73,7 @@ export default function Header({ open, handleDrawerOpen, title }) {
             <MenuIcon />
           </IconButton>
           <Link className={classes.links}to="/main">
-            <Typography variant="h6" noWrap>
+            <Typography variant="h5" noWrap>
               {title}
             </Typography>
           </Link>

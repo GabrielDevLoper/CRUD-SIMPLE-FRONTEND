@@ -182,10 +182,9 @@ export default function Clients() {
               <AddIcon />
             </Fab>
           </Tooltip>
-        }
+          }
         >
           {/**CORPO DO MODAL QUE SERÁ O FORM DO CADASTRO DO CLIENTE */}
-
           <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
