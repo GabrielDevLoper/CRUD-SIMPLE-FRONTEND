@@ -8,8 +8,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Link } from 'react-router-dom';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
 
 const drawerWidth = 240;
 
@@ -49,14 +47,17 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(3),
     width: 70,
     height: 70,
-    
+    backgroundColor: '#4f3e87',
+    '&:hover': {
+      backgroundColor: '#7159c1',
+    }
   },
   fab: {
     bottom: theme.spacing(2),
     right: theme.spacing(0),
   },
   icon: {
-    fontSize: 40
+    fontSize: 40,
   }
 }));
 
@@ -92,7 +93,7 @@ export default function Main({ children, title='CRUD-SIMPLE' }) {
 
         <Link to="/">
           <Tooltip title="Logout" aria-label="add">
-            <Fab color="secondary" className={classes.absolute}>
+            <Fab  color='primary' size='medium' className={classes.absolute}>
               <ExitToAppIcon className={classes.icon}/>
             </Fab>
           </Tooltip>
