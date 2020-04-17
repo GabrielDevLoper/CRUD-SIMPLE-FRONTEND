@@ -99,6 +99,8 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+
 export default function Clients() {
   const classes = useStyles();
   const formRef = useRef(null);
@@ -173,16 +175,16 @@ export default function Clients() {
     loadTable();
   }, [client]);
 
+
+
   return (
     <>
       <Main title="CADASTRO SIMPLES DE UM CLIENTE">
-        <Modal openModal={
-          <Tooltip title="Add" aria-label="add">
-            <Fab color="primary" size='large' className={classes.addIcon}>
-              <AddIcon />
-            </Fab>
-          </Tooltip>
-          }
+        <Modal openModal={<Tooltip title="Cadastrar Cliente" aria-label="add">
+          <Fab color="primary" size='large' className={classes.addIcon}>
+            <AddIcon />
+          </Fab>
+        </Tooltip>}
         >
           {/**CORPO DO MODAL QUE SERÁ O FORM DO CADASTRO DO CLIENTE */}
           <Container component="main" maxWidth="xs">
